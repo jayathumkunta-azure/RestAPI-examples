@@ -1,0 +1,53 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "resttojson.json",
+				"fileSystem": "myjsonfiles"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"status": {
+					"type": "string"
+				},
+				"data": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "integer"
+							},
+							"employee_name": {
+								"type": "string"
+							},
+							"employee_salary": {
+								"type": "string"
+							},
+							"employee_age": {
+								"type": "string"
+							},
+							"profile_image": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"message": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
